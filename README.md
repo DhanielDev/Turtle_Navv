@@ -4,29 +4,29 @@ This guide explains how to set up your workspace, build the project, and run Tur
 
 ---
 
-## 1. Create Workspace & Build
+## 📦 1. Setup Workspace & Build Project
 
-1. Create a workspace:
+1️⃣ Buat workspace :
 
 ```bash
 mkdir -p ~/turtlebot4_delivery/src
 cd ~/turtlebot4_delivery/src
 ```
 
-2. Clone the GitHub repository:
+2️⃣ Clone repository :
 
 ```bash
 git clone https://github.com/MarcellinoAcel/pose_nav_turtle.git
 ```
 
-3. Build using colcon:
+3️⃣ Build workspace dengan colcon :
 
 ```bash
 cd ~/turtlebot4_delivery
 colcon build
 ```
 
-4. Source the workspace:
+4️⃣ Source workspace :
 
 ```bash
 source install/setup.bash
@@ -34,9 +34,9 @@ source install/setup.bash
 
 ---
 
-## 2. Visualization (RViz)
+## 🖥️ 2. Visualization (RViz)
 
-### Option A: Run RViz remotely via SSH (recommended only if needed)
+### 🔹Option A: Run RViz remotely via SSH (recommended only if needed)
 
 Connect with X forwarding:
 
@@ -50,7 +50,7 @@ Launch the navigation RViz view:
 ros2 launch turtlebot4_viz view_navigation.launch.py
 ```
 
-### Option B: Run RViz locally (better performance)
+### 🔹Option B: Run RViz locally (better performance)
 
 If RViz is installed on your laptop, **no need for SSH -X**.
 Simply run:
@@ -61,7 +61,7 @@ ros2 launch turtlebot4_viz view_robot.launch.py
 
 ---
 
-## 3. Localization
+## 📍 3. Localization
 *(Open a **new terminal**)*
 Connect to the robot:
 
@@ -88,7 +88,7 @@ In RViz:
 
 ---
 
-## 4. Run Your Navigation Package
+## 🤖 4. Run Your Navigation Package
 *(Open a **new terminal**)*
 Connect again:
 
@@ -109,11 +109,11 @@ Launch your navigation node:
 ros2 launch pose_nav_turtle run_nav.launch.py
 ```
 
-Then test navigation using **Nav2 Goal** in RViz.
+➡️Then test navigation using **Nav2 Goal** in RViz.
 
 ---
 
-## 5. Run Additional Nodes
+## ⚙️ 5. Run Additional Nodes
 *(Open a **new terminal**)*
 Connect once more:
 
