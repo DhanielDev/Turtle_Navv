@@ -145,4 +145,12 @@ You now have:
 * Your navigation package launched
 * Additional custom nodes for robot target pose and task
 
-Happy robot testing!
+<h1 align="center">Video UTS Lokalisasi </h1>
+
+<p align="center">
+  <a href="https://youtu.be/6zgk-CazAtY" target="_blank">
+    <img src="https://img.shields.io/badge/Tonton_Edukasi-YouTube-red?style=for-the-badge&logo=youtube" alt="Tonton di YouTube"/>
+  </a>
+</p>
+
+📺 Klik tombol di atas untuk melihat video YouTube UTS saya!
