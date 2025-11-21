@@ -1,148 +1,113 @@
-# TurtleBot4 Setup & Run Guide
+🚀 TurtleBot4 Setup & Run Guide
 
-This guide explains how to set up your workspace, build the project, and run TurtleBot4 with navigation, localization, RViz visualization, and custom packages.
+Panduan lengkap untuk menyiapkan workspace, build project, menjalankan navigasi, lokalisasi, RViz, dan paket custom pada TurtleBot4.
 
----
-
-## 1. Create Workspace & Build
-
-1. Create a workspace:
-
-```bash
+📦 1. Setup Workspace & Build Project
+1️⃣ Buat workspace
 mkdir -p ~/turtlebot4_delivery/src
 cd ~/turtlebot4_delivery/src
-```
 
-2. Clone the GitHub repository:
-
-```bash
+2️⃣ Clone repository
 git clone https://github.com/MarcellinoAcel/pose_nav_turtle.git
-```
 
-3. Build using colcon:
-
-```bash
+3️⃣ Build workspace dengan colcon
 cd ~/turtlebot4_delivery
 colcon build
-```
 
-4. Source the workspace:
-
-```bash
+4️⃣ Source workspace
 source install/setup.bash
-```
 
----
+🖥️ 2. Visualization (RViz)
+🔹 Opsi A — Jalankan RViz lewat SSH (jika benar-benar diperlukan)
 
-## 2. Visualization (RViz)
+Koneksi dengan X-Forwarding:
 
-### Option A: Run RViz remotely via SSH (recommended only if needed)
-
-Connect with X forwarding:
-
-```bash
 ssh -X ubuntu@192.168.185.3
-```
 
-Launch the navigation RViz view:
 
-```bash
+Lalu jalankan tampilan navigasi:
+
 ros2 launch turtlebot4_viz view_navigation.launch.py
-```
 
-### Option B: Run RViz locally (better performance)
+🔹 Opsi B — Jalankan RViz lokal (direkomendasikan — lebih cepat)
 
-If RViz is installed on your laptop, **no need for SSH -X**.
-Simply run:
+Tanpa SSH:
 
-```bash
 ros2 launch turtlebot4_viz view_robot.launch.py
-```
 
----
+📍 3. Localization
 
-## 3. Localization
-*(Open a **new terminal**)*
-Connect to the robot:
+Buka terminal baru, lalu konek ke robot:
 
-```bash
 ssh ubuntu@192.168.185.3
-```
+
 
 Source workspace:
 
-```bash
 cd ~/turtlebot4_delivery
 source install/setup.bash
-```
 
-Run localization with your map:
 
-```bash
+Jalankan localization dengan map Anda:
+
 ros2 launch pose_nav_turtle localization.launch.py map:=src/pose_nav_turtle/maps/map_uts_kel1.yaml
-```
 
-In RViz:
 
-* Use **2D Pose Estimate** to set the initial pose.
+Di RViz:
+➡️ Gunakan 2D Pose Estimate untuk set posisi awal robot.
 
----
+🤖 4. Jalankan Navigation Package
 
-## 4. Run Your Navigation Package
-*(Open a **new terminal**)*
-Connect again:
+Buka terminal baru dan konek ulang:
 
-```bash
 ssh ubuntu@192.168.185.3
-```
 
-Enter your workspace:
-
-```bash
-cd ~/turtlebot4_delivery
-source install/setup.bash
-```
-
-Launch your navigation node:
-
-```bash
-ros2 launch pose_nav_turtle run_nav.launch.py
-```
-
-Then test navigation using **Nav2 Goal** in RViz.
-
----
-
-## 5. Run Additional Nodes
-*(Open a **new terminal**)*
-Connect once more:
-
-```bash
-ssh ubuntu@192.168.185.3
-```
 
 Source workspace:
 
-```bash
 cd ~/turtlebot4_delivery
 source install/setup.bash
-```
 
-Run your node:
 
-```bash
+Jalankan navigation node:
+
+ros2 launch pose_nav_turtle run_nav.launch.py
+
+
+Di RViz:
+➡️ Gunakan Nav2 Goal untuk memberi tujuan navigasi.
+
+⚙️ 5. Menjalankan Node Tambahan
+
+Buka terminal baru, konek ulang:
+
+ssh ubuntu@192.168.185.3
+
+
+Source workspace:
+
+cd ~/turtlebot4_delivery
+source install/setup.bash
+
+
+Jalankan node custom:
+
 ros2 run pose_nav_turtle pose_nav_turtle
-```
 
----
+🎉 Selesai!
 
-## You’re Ready!
+Anda sekarang sudah menjalankan:
 
-You now have:
+✅ RViz Visualization
+✅ Localization
+✅ Navigation Package
+✅ Custom Node untuk pengaturan target pose & task
 
-* RViz visualization running (remote or local)
-* Localization active
-* Your navigation package launched
-* Additional custom nodes for robot target pose and task
+Selamat mencoba dan bereksperimen dengan TurtleBot4! 🤖✨
 
-Happy robot testing!
+▶️ Video Demonstrasi
+
+Klik di sini untuk menonton video demonstrasinya:
+👉 Tonton di YouTube
+
+(Ganti # dengan link video YouTube Anda)
