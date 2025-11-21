@@ -148,7 +148,7 @@ You now have:
 <h1 align="center">Video UTS Lokalisasi </h1>
 
 <p align="center">
-  <a href="https://youtu.be/6zgk-CazAtY" target="_blank">
+  <a href="https://youtu.be/_HR8I6-I-p4" target="_blank">
     <img src="https://img.shields.io/badge/Tonton_Edukasi-YouTube-red?style=for-the-badge&logo=youtube" alt="Tonton di YouTube"/>
   </a>
 </p>
